@@ -4,7 +4,6 @@ import (
 	"github.com/pritunl/pritunl-prometheus/database"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/pritunl/pritunl-prometheus/hosts"
-	"fmt"
 )
 
 var (
