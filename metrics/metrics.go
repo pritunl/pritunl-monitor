@@ -42,10 +42,17 @@ func Update() (err error) {
 	}
 
 	for _, host := range hsts {
-		cpuUsage.Set(host.CpuUsage)
-		memUsage.Set(host.MemUsage)
-		deviceCount.Set(float64(host.DeviceCount))
-		threadCount.Set(float64(host.ThreadCount))
+		if host.Status == "online" {
+			cpuUsage.Set(host.CpuUsage)
+			memUsage.Set(host.MemUsage)
+			deviceCount.Set(float64(host.DeviceCount))
+			threadCount.Set(float64(host.ThreadCount))
+		} else {
+			cpuUsage.Set(0.0)
+			memUsage.Set(0.0)
+			deviceCount.Set(0.0)
+			threadCount.Set(0.0)
+		}
 	}
 
 	return
