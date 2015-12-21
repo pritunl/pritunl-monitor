@@ -44,8 +44,6 @@ func Update() (err error) {
 
 	curTime := time.Now().Unix()
 
-	fmt.Println(curTime)
-
 	mtric := &metric{
 		Metric: "pritunl.cpu_usage",
 		Points: [][]interface{}{
