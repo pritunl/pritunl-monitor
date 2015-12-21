@@ -7,6 +7,7 @@ import (
 
 type Host struct {
 	Id             string    `bson:"_id"`
+	Name           string    `bson:"name"`
 	Status         string    `bson:"status"`
 	StartTimestamp time.Time `bson:"start_timestamp"`
 	ThreadCount    int       `bson:"thread_count"`
