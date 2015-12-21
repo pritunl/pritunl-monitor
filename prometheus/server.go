@@ -21,7 +21,7 @@ func Recovery(c *gin.Context) {
 		if r := recover(); r != nil {
 			logrus.WithFields(logrus.Fields{
 				"error": errors.New(fmt.Sprintf("%s", r)),
-			}).Error("handlers: Handler panic")
+			}).Error("prometheus: Handler panic")
 			c.Writer.WriteHeader(http.StatusInternalServerError)
 		}
 	}()
@@ -74,7 +74,7 @@ func Start() (err error) {
 	err = server.ListenAndServe()
 	if err != nil {
 		err = &errortypes.UnknownError{
-			errors.Wrap(err, "server: Server error"),
+			errors.Wrap(err, "prometheus: Server error"),
 		}
 		return
 	}
