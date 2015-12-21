@@ -12,6 +12,7 @@ type Host struct {
 	ThreadCount    int       `bson:"thread_count"`
 	CpuUsage       float64   `bson:"cpu_usage"`
 	MemUsage       float64   `bson:"mem_usage"`
+	ServerCount    int       `bson:"server_count"`
 	DeviceCount    int       `bson:"device_count"`
 }
 
