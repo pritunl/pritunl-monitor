@@ -4,6 +4,7 @@ import (
 	"github.com/pritunl/pritunl-monitoring/database"
 	"github.com/pritunl/pritunl-monitoring/hosts"
 	"github.com/prometheus/client_golang/prometheus"
+	"os"
 )
 
 var (
@@ -41,25 +42,23 @@ func Update() (err error) {
 	db := database.GetDatabase()
 	defer db.Close()
 
-	hsts, err := hosts.GetHosts(db)
+	host, err := hosts.GetHost(db, os.Getenv("HOST_ID"))
 	if err != nil {
 		return
 	}
 
-	for _, host := range hsts {
-		if host.Status == "online" {
-			cpuUsage.Set(host.CpuUsage)
-			memUsage.Set(host.MemUsage)
-			serverCount.Set(float64(host.ServerCount))
-			deviceCount.Set(float64(host.DeviceCount))
-			threadCount.Set(float64(host.ThreadCount))
-		} else {
-			cpuUsage.Set(0.0)
-			memUsage.Set(0.0)
-			serverCount.Set(0.0)
-			deviceCount.Set(0.0)
-			threadCount.Set(0.0)
-		}
+	if host.Status == "online" {
+		cpuUsage.Set(host.CpuUsage)
+		memUsage.Set(host.MemUsage)
+		serverCount.Set(float64(host.ServerCount))
+		deviceCount.Set(float64(host.DeviceCount))
+		threadCount.Set(float64(host.ThreadCount))
+	} else {
+		cpuUsage.Set(0.0)
+		memUsage.Set(0.0)
+		serverCount.Set(0.0)
+		deviceCount.Set(0.0)
+		threadCount.Set(0.0)
 	}
 
 	return
