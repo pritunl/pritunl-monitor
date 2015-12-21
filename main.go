@@ -1,12 +1,25 @@
 package main
 
 import (
+	"fmt"
+	"github.com/pritunl/pritunl-monitoring/datadog"
 	"github.com/pritunl/pritunl-monitoring/prometheus"
+	"os"
 )
 
 func main() {
-	err := prometheus.Start()
-	if err != nil {
-		panic(err)
+	switch os.Getenv("MODE") {
+	case "prometheus":
+		err := prometheus.Start()
+		if err != nil {
+			panic(err)
+		}
+	case "datadog":
+		err := datadog.Start()
+		if err != nil {
+			panic(err)
+		}
+	default:
+		panic(fmt.Sprintf("unknown mode %s", os.Getenv("MODE")))
 	}
 }
