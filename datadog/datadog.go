@@ -50,7 +50,7 @@ func Update() (err error) {
 		Metric: "pritunl.cpu_usage",
 		Points: [][]interface{}{
 			[]interface{}{
-				curTime, host.CpuUsage * 100,
+				curTime, host.CpuUsage,
 			},
 		},
 		Type: "gauge",
@@ -62,7 +62,7 @@ func Update() (err error) {
 		Metric: "pritunl.mem_usage",
 		Points: [][]interface{}{
 			[]interface{}{
-				curTime, host.MemUsage * 100,
+				curTime, host.MemUsage,
 			},
 		},
 		Type: "gauge",
