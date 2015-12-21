@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/pritunl/pritunl-prometheus/handlers"
-	"github.com/pritunl/pritunl-prometheus/metrics"
+	"github.com/pritunl/pritunl-monitoring/handlers"
+	"github.com/pritunl/pritunl-monitoring/metrics"
 	"net/http"
 	"os"
 	"time"

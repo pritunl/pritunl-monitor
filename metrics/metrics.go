@@ -1,9 +1,9 @@
 package metrics
 
 import (
-	"github.com/pritunl/pritunl-prometheus/database"
+	"github.com/pritunl/pritunl-monitoring/database"
+	"github.com/pritunl/pritunl-monitoring/hosts"
 	"github.com/prometheus/client_golang/prometheus"
-	"github.com/pritunl/pritunl-prometheus/hosts"
 )
 
 var (

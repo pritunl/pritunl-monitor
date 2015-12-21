@@ -1,7 +1,7 @@
 package hosts
 
 import (
-	"github.com/pritunl/pritunl-prometheus/database"
+	"github.com/pritunl/pritunl-monitoring/database"
 	"time"
 )
 
