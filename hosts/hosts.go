@@ -17,6 +17,19 @@ type Host struct {
 	DeviceCount    int       `bson:"device_count"`
 }
 
+func GetHost(db *database.Database, id string) (host *Host, err error) {
+	coll := db.Hosts()
+	host = &Host{}
+
+	err = coll.FindId(id).One(host)
+	if err != nil {
+		err = database.ParseError(err)
+		return
+	}
+
+	return
+}
+
 func GetHosts(db *database.Database) (hosts []*Host, err error) {
 	coll := db.Hosts()
 	hosts = []*Host{}
