@@ -1,8 +1,8 @@
 package prometheus
 
 import (
-	"github.com/pritunl/pritunl-monitoring/database"
-	"github.com/pritunl/pritunl-monitoring/hosts"
+	"github.com/pritunl/pritunl-monitor/database"
+	"github.com/pritunl/pritunl-monitor/hosts"
 	"github.com/prometheus/client_golang/prometheus"
 	"os"
 )

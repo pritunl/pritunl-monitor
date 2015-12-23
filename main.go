@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/pritunl/pritunl-monitoring/datadog"
-	"github.com/pritunl/pritunl-monitoring/prometheus"
+	"github.com/pritunl/pritunl-monitor/datadog"
+	"github.com/pritunl/pritunl-monitor/prometheus"
 	"os"
 )
 

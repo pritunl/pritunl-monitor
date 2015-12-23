@@ -5,7 +5,7 @@ import (
 	"github.com/Sirupsen/logrus"
 	"github.com/dropbox/godropbox/errors"
 	"github.com/gin-gonic/gin"
-	"github.com/pritunl/pritunl-monitoring/errortypes"
+	"github.com/pritunl/pritunl-monitor/errortypes"
 	"github.com/prometheus/client_golang/prometheus"
 	"net/http"
 	"os"
