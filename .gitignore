@@ -11,4 +11,3 @@ Thumbs.db
 *.egg-info
 .sass-cache
 /pritunl-monitor
-/pritunl-monitor.iml
