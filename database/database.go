@@ -10,7 +10,6 @@ import (
 	"net"
 	"net/url"
 	"os"
-	"strings"
 	"time"
 )
 
@@ -121,15 +120,7 @@ func Connect() (err error) {
 
 func GetDatabase() (db *Database) {
 	session := Session.Copy()
-
-	var dbName string
-	if x := strings.LastIndex(mongoUrl, "/"); x != -1 {
-		dbName = mongoUrl[x+1:]
-	} else {
-		dbName = "pritunl"
-	}
-
-	database := session.DB(dbName)
+	database := session.DB("")
 
 	db = &Database{
 		session:  session,
