@@ -3,7 +3,7 @@ package database
 import (
 	"github.com/Sirupsen/logrus"
 	"github.com/dropbox/godropbox/errors"
-	"labix.org/v2/mgo"
+	"gopkg.in/mgo.v2"
 	"os"
 	"strings"
 	"time"
